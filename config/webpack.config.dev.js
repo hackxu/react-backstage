@@ -149,7 +149,7 @@ module.exports = {
                         loader: require.resolve('babel-loader'),
                         options: {
                             plugins: [
-                                ['import', [{libraryName: 'antd', style: true}]],  // import less
+                                ['import', [{libraryName: 'antd', style: 'css'}]],  // import less
                             ],
                             // This is a feature of `babel-loader` for webpack (not Babel itself).
                             // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -184,7 +184,7 @@ module.exports = {
                             {
                                 loader: require.resolve('less-loader'),
                                 options: {
-                                    modifyVars: {"@primary-color": "#1DA57A"},
+                                    // modifyVars: {"@primary-color": "#1DA57A"},
                                 },
                             },
                         ],
@@ -236,7 +236,7 @@ module.exports = {
                         // it's runtime that would otherwise processed through "file" loader.
                         // Also exclude `html` and `json` extensions so they get processed
                         // by webpacks internal loaders.
-                        exclude: [/\.js$/, /\.html$/, /\.json$/, /\.less$/],
+                        exclude: [/\.js$/, /\.html$/, /\.json$/, /\.less$/,],
                         loader: require.resolve('file-loader'),
                         options: {
                             name: 'static/media/[name].[hash:8].[ext]',
